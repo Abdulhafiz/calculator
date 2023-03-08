@@ -16,6 +16,11 @@ public class CalculatorController {
 
     @Autowired
     CalculatorService calculatorService;
+    
+    @GetMapping("/Welcome/{name}")
+    public ApiResult add(@RequestVariable("name") String name) {
+        return  ResultBuilder.getResult(name +"This is Jenkins for SpringBoot application deployed to Local Tomcat Server");
+    }
 
 
     @GetMapping("/add")

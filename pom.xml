@@ -11,7 +11,9 @@
 	<groupId>com.jenkins</groupId>
 	<artifactId>calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>calculator</name>
+	
 	<description>Demo Spring Boot project for Jenkins</description>
 	<properties>
 		<java.version>17</java.version>

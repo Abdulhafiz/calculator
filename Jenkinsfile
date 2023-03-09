@@ -14,7 +14,7 @@ node {
     }
     
      stage("Deployment") {
-      bat './mvnw spring-boot:run -Dserver.port=5050 &'
+      bat './mvnw spring-boot:run -Dserver.port=8001 &'
     }
   }
   

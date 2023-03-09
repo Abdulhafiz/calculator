@@ -1,21 +1,22 @@
-node {
-  stage("Clone the project") {
-    git branch: 'main', url: 'https://github.com/Abdulhafiz/calculator.git'
+pipeline {
+  agent any
+  
+  tools{
+    maven 'maven_3_9_0'
   }
 
-  stage("Compilation") {
-    bat "./mvnw clean install -DskipTests"
-  }
-
-  stage("Tests & Deployment") {
-
-    stage("Runing unit tests") {
-      bat "./mvnw test -Punit"
-    }
+  stages{
     
-     stage("Deployment") {
-      bat './mvnw spring-boot:run -Dserver.port=8001 &'
+    stage("Build Maven") {
+      steps{
+        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'MyGitHub', url: 'https://github.com/Abdulhafiz/calculator']])
+        sh 'mvn clean install'
+      }
     }
+
+  
   }
+  
+  
   
 }

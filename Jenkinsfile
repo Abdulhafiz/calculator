@@ -26,8 +26,8 @@ pipeline {
         stage("Push Image") {
             steps{
                 script {
-                    withCredentials([string(credentialsId: 'dockercred', variable: 'dockerhubpwd')]) {
-                        sh 'docker login -u abdulhafizdocker -p ${dockerhubpwd}'
+                    withCredentials([string(credentialsId: 'dockercred', variable: 'dockerpwd')]) {
+                        sh 'docker login -u abdulhafizdocker -p ${dockerpwd}'
                     }
 
                     sh 'docker push calculator_integration'

@@ -17,7 +17,7 @@ pipeline {
         stage("Build Image") {
             steps{
                 script {
-                    sh 'docker build -t abdulhafizdocker/calculator_integration.jar .'
+                    sh 'docker build -t abdulhafizdocker/calculator_integration .'
 
                 }
             }
@@ -30,7 +30,6 @@ pipeline {
                         sh 'docker login -u abdulhafizdocker -p ${dockerpwd}'
                     }
 
-                    sh 'docker tag 3ec9475232a7 abdulhafizdocker/calculator_integration'
 
                     sh 'docker push abdulhafizdocker/calculator_integration'
 

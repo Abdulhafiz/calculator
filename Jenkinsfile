@@ -30,9 +30,7 @@ pipeline {
                         sh 'docker login -u abdulhafizdocker -p ${dockerpwd}'
                     }
 
-                    sh 'docker tag d390771aba78 abdulhafizdocker/calculator_integration:calculator_integration'
-
-                    sh 'docker push abdulhafizdocker/calculator_integration:calculator_integration'
+                    sh 'docker push abdulhafizdocker/calculator_integration:calculator_integration:latest'
 
                 }
             }

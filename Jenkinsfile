@@ -17,7 +17,7 @@ pipeline {
         stage("Build Image") {
             steps{
                 script {
-                    sh 'docker build -t abdulhafizdocker/calculator_integration .'
+                    sh 'docker build -t abdulhafizdocker/calculator_integration:latest .'
 
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
                     }
 
 
-                    sh 'docker push abdulhafizdocker/calculator_integration'
+                    sh 'docker push abdulhafizdocker/calculator_integration:latest'
 
                 }
             }
